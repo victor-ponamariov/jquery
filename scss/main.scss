@@ -2,104 +2,117 @@
 @import '../node_modules/bootstrap/scss/bootstrap-grid.scss';
 
 body {
-    width: 100%;
+  width: 100%;
 }
 
+// Слишком general style, у разных форм могут быть разные стили, опасно
+// Лучше классом каким-нить
 form {
-    padding: 20px 30px;
-    border: 4px solid darkgray;
-    margin: 30px 20px;
+  padding: 20px 30px;
+  border: 4px solid darkgray;
+  margin: 30px 20px;
 }
 
+// Я стараюсь свойства как-то логично располагать, например то что к флексу идет друг за другом
+// Тут по разному конечно можно делать, но мое личное имхо что по логике, и причем сначала я обычно
+// ставлю display, position, потом ширину высоту маржини паддинги потом все остальное. Типа
+// позиционирование и display более важны для меня
 .model-summary {
-    width: 300px;
-    background-color: lightblue;
-    height: 250px;
-    display: flex;
-    flex-direction: column;
-    padding: 10px 20px 15px;
-    justify-content: space-between;
-    color: blue;
-    border-radius: 3px;
-    font-size: 16px;
+  // Флекс
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+
+  // Ширина высота
+  width: 300px;
+  height: 250px;
+
+  // Маржины паддинги
+  padding: 10px 20px 15px;
+
+  // Параметры шрифта
+  color: blue;
+  font-size: 16px;
+
+  background-color: lightblue;
+  border-radius: 3px;
 }
 
 .model-name {
-    color: blue;
-    font-size: 30px;
-    font-weight: 700;
+  color: blue;
+  font-size: 30px;
+  font-weight: 700;
 }
 
 .button {
-    padding: 5px;
-    background-color: blue;
-    border-radius: 5px;
-    color: white;
-    text-align: center;
-    display: inline-block ;
-    border: none;
-    width: 150px;
-    cursor: pointer;
+  padding: 5px;
+  background-color: blue;
+  border-radius: 5px;
+  color: white;
+  text-align: center;
+  display: inline-block;
+  border: none;
+  width: 150px;
+  cursor: pointer;
 }
 
 .imgHolder {
-    display: flex;
-    justify-content: space-between;
-    margin: 30px 20px;
-
+  display: flex;
+  justify-content: space-between;
+  margin: 30px 20px;
 }
 
 .imgHolder img {
-    width: 700px;
-    height: auto;
-    margin-left: 350px;
-
+  width: 700px;
+  height: auto;
+  margin-left: 350px;
 }
 
+// Такое можно оптимизировать, даже IDE просит margin: 30px 0 0 0; - в прицнипе так делают
 .row {
-    margin: 0;
-    margin-top: 30px;
+  margin: 0;
+  margin-top: 30px;
 }
-
 
 .colorsSelector {
-    display: flex;
-    width: 400px;
-    justify-content: space-between;
-    margin-top: 15px;
+  display: flex;
+  width: 400px;
+  justify-content: space-between;
+  margin-top: 15px;
 }
 
 .colorItem {
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    cursor: pointer;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
 }
 
+// Можно упороться (здесь не стоит но вообще говорю) и сделать массив в scss с цветами в отдельном файле))
 .colorBlue {
-    background-color: #2070aa;
+  background-color: #2070aa;
 }
 
 .colorWhite {
-    background-color: #e7e7e7;
+  background-color: #e7e7e7;
 }
 
 .colorRed {
-    background-color: #a72225;
+  background-color: #a72225;
 }
 
 .colorBlack {
-    background-color: #2d2b2b;
+  background-color: #2d2b2b;
 }
 
 .colorWhitePure {
-    background-color: #d3d8df;
+  background-color: #d3d8df;
 }
 
 .colorOrange {
-    background-color: #c97b29;
+  background-color: #c97b29;
 }
 
 .colorGraphite {
-    background-color: #818385;
+  background-color: #818385;
 }

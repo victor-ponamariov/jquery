@@ -1,88 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>jQuery - подключение</title>
-    <link rel="stylesheet" href="css/main.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>jQuery - подключение</title>
+  <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
+  <div class="imgHolder" id="imgHolder">
+    <img src="/img/white.png" alt="Car">
 
-    <div class="imgHolder" id="imgHolder">
-        <img src="/img/white.png" alt="Car">
+    <div class="model-summary">
+      <div class="model-name">Hundai Solaris</div>
+      <div class="model-specs" id="modelSpecs"></div>
+      <div class="model-price" id="modelPrice"></div>
+      <div class="model-price" id="modelPriceUSD"></div>
+      <button type="button" class="button">Заказать</button> <!-- Ну конечно же <button>, а не input type button, прошлый век -->
+    </div>
+  </div>
 
-        <div class="model-summary">
-            <div class="model-name">Hundai Solaris</div>
-            <div class="model-specs" id="modelSpecs"></div>
-            <div class="model-price" id="modelPrice"></div>
-            <div class="model-price" id="modelPriceUSD"></div>
-            <input class="button" value="Заказать">
+  <form id="auto-form">
+    <h2>Настрой авто для себя</h2>
+    <div class="row justify-content-between">
+      <div class="col-1-of-3">
+        <h4>Двигатель</h4>
+        <div class="form-block">
+          <input type="radio" id="engine1400" name="engine" value="624900" checked>
+          <label for="engine1400">1.4 л (100 л.c.)</label>
         </div>
+        <div class="form-block">
+          <input type="radio" id="engine1600" name="engine" value="749900">
+          <label for="engine1400">1.6 л (123 л.c.)</label>
+        </div>
+      </div>
+
+      <div class="col-1-of-3">
+        <h4>Коробка передач</h4>
+        <div class="form-block">
+          <input type="radio" id="transmission6MT" name="transmission" value="0" checked>
+          <label for="transmission6MT">Ручная, 6 ступеней (6 MT)</label>
+        </div>
+        <div class="form-block">
+          <input type="radio" id="transmission6AT" name="transmission" value="125000">
+          <label for="transmission6AT">Автомат, 6 ступеней (6 AT)</label>
+        </div>
+      </div>
+
+      <div class="col-1-of-3">
+        <h4>Пакет (дополнительные опции)</h4>
+        <div class="form-block">
+          <input type="radio" id="packageActive" name="package" value="0" checked>
+          <label for="packageActive">Active</label>
+        </div>
+        <div class="form-block">
+          <input type="radio" id="packageActivePlus" name="package" value="85000">
+          <label for="packageActivePlus">Active Plus (кондиционер)</label>
+        </div>
+        <div class="form-block">
+          <input type="radio" id="packageComfort" name="package" value="130000">
+          <label for="packageComfort">Comfort (климатконтроль)</label>
+        </div>
+      </div>
     </div>
 
-    <form id="auto-form">
-        <h2>Настрой авто для себя</h2>
-        <div class="row justify-content-between">
-            <div class="col-1-of-3">
-                <h4>Двигатель</h4>
-                <div class="form-block">
-                    <input type="radio" id="engine1400" name="engine" value="624900" checked>
-                    <label for="engine1400">1.4 л (100 л.c.)</label>
-                </div>
-                <div class="form-block">
-                    <input type="radio" id="engine1600" name="engine" value="749900">
-                    <label for="engine1400">1.6 л (123 л.c.)</label>
-                </div>
-            </div>
+    <h4>Цвет</h4>
+    <div class="form-block">
+      <div class="colorsSelector" id="colorsSelector">
+        <div class="colorItem colorBlue" data-image-path="/img/blue.png"></div>
+        <div class="colorItem colorWhite" data-image-path="/img/white.png"></div>
+        <div class="colorItem colorRed" data-image-path="/img/red.png"></div>
+        <div class="colorItem colorBlack" data-image-path="/img/black.png"></div>
+        <div class="colorItem colorWhitePure" data-image-path="/img/silver.png"></div>
+        <div class="colorItem colorOrange" data-image-path="/img/orange.png"></div>
+        <div class="colorItem colorGraphite" data-image-path="/img/darkgrey.png"></div>
+      </div>
+    </div>
+  </form>
 
-            <div class="col-1-of-3">
-                <h4>Коробка передач</h4>
-                <div class="form-block">
-                    <input type="radio" id="transmission6MT" name="transmission" value="0" checked>
-                    <label for="transmission6MT">Ручная, 6 ступеней (6 MT)</label>
-                </div>
-                <div class="form-block">
-                    <input type="radio" id="transmission6AT" name="transmission" value="125000">
-                    <label for="transmission6AT">Автомат, 6 ступеней (6 AT)</label>
-                </div>
-            </div>
-
-            <div class="col-1-of-3">
-                <h4>Пакет (дополнительные опции)</h4>
-                <div class="form-block">
-                    <input type="radio" id="packageActive" name="package" value="0" checked>
-                    <label for="packageActive">Active</label>
-                </div>
-                <div class="form-block">
-                    <input type="radio" id="packageActivePlus" name="package" value="85000">
-                    <label for="packageActivePlus">Active Plus (кондиционер)</label>
-                </div>
-                <div class="form-block">
-                    <input type="radio" id="packageComfort" name="package" value="130000">
-                    <label for="packageComfort">Comfort (климатконтроль)</label>
-                </div>
-            </div>
-        </div>
-
-        <h4>Цвет</h4>
-        <div class="form-block">
-            <div class="colorsSelector" id="colorsSelector">
-                <div class="colorItem colorBlue" data-image-path="/img/blue.png"></div>
-                <div class="colorItem colorWhite" data-image-path="/img/white.png"></div>
-                <div class="colorItem colorRed" data-image-path="/img/red.png"></div>
-                <div class="colorItem colorBlack" data-image-path="/img/black.png"></div>
-                <div class="colorItem colorWhitePure" data-image-path="/img/silver.png"></div>
-                <div class="colorItem colorOrange" data-image-path="/img/orange.png"></div>
-                <div class="colorItem colorGraphite" data-image-path="/img/darkgrey.png"></div>
-            </div>
-        </div> 
-
-
-
-    </form>
-
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="js/main.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
